@@ -301,11 +301,11 @@ def update_tidb():
     else:
         print("No new documents to insert into TiDB.")
 
-def background_updater():
-    """Background thread function that updates TiDB every 10 seconds."""
-    while True:
-        update_tidb()
-        time.sleep(10)  # Wait for 10 seconds before the next update
+# def background_updater():
+#     """Background thread function that updates TiDB every 10 seconds."""
+#     while True:
+#         update_tidb()
+#         time.sleep(10)  # Wait for 10 seconds before the next update
 
 
 

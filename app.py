@@ -307,6 +307,8 @@ def background_updater():
         update_tidb()
         time.sleep(10)  # Wait for 10 seconds before the next update
 
+background_updater()
+
 
 
 # Register the custom functions from the contextProcessor module as context processors for the app

@@ -301,11 +301,11 @@ def update_tidb():
     else:
         print("No new documents to insert into TiDB.")
 
-# def background_updater():
-#     """Background thread function that updates TiDB every 10 seconds."""
-#     while True:
-#         update_tidb()
-#         time.sleep(10)  # Wait for 10 seconds before the next update
+def background_updater():
+    """Background thread function that updates TiDB every 10 seconds."""
+    while True:
+        update_tidb()
+        time.sleep(10)  # Wait for 10 seconds before the next update
 
 
 
@@ -576,9 +576,9 @@ app.register_blueprint(
 
 
 if __name__ == '__main__':
-    # # Start the background updater thread
-    # updater_thread = threading.Thread(target=background_updater)
-    # updater_thread.daemon = True  # Daemonize thread to exit when the main program exits
-    # updater_thread.start()
+    # Start the background updater thread
+    updater_thread = threading.Thread(target=background_updater)
+    updater_thread.daemon = True  # Daemonize thread to exit when the main program exits
+    updater_thread.start()
 
     app.run(debug=True)

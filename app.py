@@ -253,9 +253,9 @@ embedding_dimensions = 768
 # Init TiDB connection
 db = MySQLDatabase(
     'test',
-    user='GLhAdq53EXzFzXf.root',
-    password='tbt7GsoxCY0cHvVs',
-    host='gateway01.eu-central-1.prod.aws.tidbcloud.com',
+    user='2mdmntsDsmkdm6N.root',
+    password='Esjd63nax0u6H8Te',
+    host='gateway01.us-east-1.prod.aws.tidbcloud.com',
     port=4000,
     ssl_verify_cert=True,
     ssl_verify_identity=True
@@ -576,9 +576,9 @@ app.register_blueprint(
 
 
 if __name__ == '__main__':
-    # Start the background updater thread
-    updater_thread = threading.Thread(target=background_updater)
-    updater_thread.daemon = True  # Daemonize thread to exit when the main program exits
-    updater_thread.start()
+    # # Start the background updater thread
+    # updater_thread = threading.Thread(target=background_updater)
+    # updater_thread.daemon = True  # Daemonize thread to exit when the main program exits
+    # updater_thread.start()
 
     app.run(debug=True)

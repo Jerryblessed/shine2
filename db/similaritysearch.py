@@ -29,13 +29,14 @@ embedding_dimensions = 768
 # Init TiDB connection
 db = MySQLDatabase(
     'test',
-    user='GLhAdq53EXzFzXf.root',
-    password='tbt7GsoxCY0cHvVs',
-    host='gateway01.eu-central-1.prod.aws.tidbcloud.com',
+    user='2mdmntsDsmkdm6N.root',
+    password='Esjd63nax0u6H8Te',
+    host='gateway01.us-east-1.prod.aws.tidbcloud.com',
     port=4000,
     ssl_verify_cert=True,
     ssl_verify_identity=True
 )
+
 
 # Define a model with a VectorField to store the embeddings
 class DocModel(Model):

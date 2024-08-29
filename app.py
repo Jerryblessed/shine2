@@ -297,17 +297,12 @@ def update_tidb():
         embeddings = genai.embed_content(model=embedding_model, content=new_documents, task_type="retrieval_document")
         data_source = [{"text": doc, "embedding": emb} for doc, emb in zip(new_documents, embeddings['embedding'])]
         DocModel.insert_many(data_source).execute()
-        print(f"Inserted {len(new_documents)} new documents into TiDB.")
-    else:
-        print("No new documents to insert into TiDB.")
 
 def background_updater():
     """Background thread function that updates TiDB every 10 seconds."""
     while True:
         update_tidb()
         time.sleep(10)  # Wait for 10 seconds before the next update
-
-background_updater()
 
 
 
@@ -443,7 +438,7 @@ match DEFAULT_ADMIN:
         Log.app(f"Default admin profile picture: {DEFAULT_ADMIN_PROFILE_PICTURE}")
     case False:
         # Log a danger message that admin is off
-        Log.app(f"Default admin is off")
+        Log.app(f"Default admin is off") 
 
 # Call the dbFolder, usersTable, postsTable and commentsTable functions to check the database status
 dbFolder()
@@ -523,7 +518,7 @@ app.register_blueprint(
 
 # Registering the blueprint for the similarity search route
 
-# Registering the blueprint for the ai bar route
+# # Registering the blueprint for the ai bar route
 # app.register_blueprint(
 #     AIBlueprint
 # )
@@ -578,7 +573,7 @@ app.register_blueprint(
 
 
 if __name__ == '__main__':
-    # Start the background updater thread
+    # # Start the background updater thread
     updater_thread = threading.Thread(target=background_updater)
     updater_thread.daemon = True  # Daemonize thread to exit when the main program exits
     updater_thread.start()
